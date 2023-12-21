@@ -11,6 +11,7 @@ public class Usuario {
     private String lastName;
     private String password;
     private int bolivares;
+    private String lang;
     //private List<Objeto> objetos;
     public Usuario() {}
 
@@ -22,6 +23,7 @@ public class Usuario {
         this.setLastName(lastName);
         this.setPassword(password);
         this.bolivares = 500;
+        this.setLang(null);
        /*this.objetos = new List<Objeto>() {
             @Override
             public int size() {
@@ -197,7 +199,15 @@ public class Usuario {
     public void setBolivares(int bolivares) {
         this.bolivares = bolivares;
     }
-/*
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+    /*
     public List<Objeto> getObjetos() {
         return objetos;
     }

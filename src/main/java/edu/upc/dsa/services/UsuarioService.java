@@ -162,6 +162,33 @@ public class UsuarioService {
 
     }
 
+    @GET
+    @ApiOperation(value = "get idioma", notes = "asdasd")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response = Insignia.class, responseContainer="List"),
+    })
+    @Path("/idioma/{mail}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getLang(@PathParam("mail") String mail) {
+
+        String lang = jm.getLang(mail);
+        GenericEntity<String> entity = new GenericEntity<String>(lang) {};
+        return Response.status(201).entity(entity).build();
+    }
+    @PUT
+    @ApiOperation(value = "Actualizar idioma", notes = "Actualiza la información del usuario")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Actualización exitosa"),
+    })
+    @Path("/actualizarIdioma/{mail}/{newLang}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response setLang(
+            @PathParam("mail") String mail,
+            @PathParam("newLang") String newLang) {
+
+        jm.setLang(mail, newLang);
+        return Response.status(201).build();
+    }
 
 }
 

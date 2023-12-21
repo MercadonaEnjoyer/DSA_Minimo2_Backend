@@ -23,4 +23,7 @@ public interface JuegoManager {
     public ArrayList<Insignia> getInsignias(String id);
     public void addInsignias(List<Insignia> i, String id);
 
+    public void setLang(String mail, String lang);
+    public String getLang(String mail);
+
     }

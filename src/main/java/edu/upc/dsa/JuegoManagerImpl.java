@@ -203,5 +203,14 @@ public class JuegoManagerImpl implements JuegoManager {
         Insignias.put(id, i);
     }
 
+    public void setLang(String mail, String lang){
+        Usuario u = getUser(mail);
+        u.setLang(lang);
+    }
+    public String getLang(String mail){
+        Usuario u = getUser(mail);
+        return u.getLang();
+    }
+
 
 }
